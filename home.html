@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['bar', 'corechart']});
+            google.charts.setOnLoadCallback(drawCharts);
+
+            function drawCharts() {
+                var data1 = google.visualization.arrayToDataTable([
+                    ['2023', 'Lixo Comum', 'Lixo Molhado', 'Lixo Reciclável'],
+                    ['Norte', 1000, 400, 200],
+                    ['Sul', 1170, 460, 250],
+                    ['Oeste', 660, 1120, 300],
+                    ['Leste', 1030, 540, 350]
+                ]);
+
+                var options1 = {
+                    chart: {
+                        title: 'Kg de Lixo Descartado por Região',
+                        subtitle: 'Quantidade de lixo descartado por tipo e região',
+                    },
+                    colors: ['#225044', '#88AF95', '#D1E8D4']
+                };
+
+                var chart1 = new google.charts.Bar(document.getElementById('columnchart_material'));
+                chart1.draw(data1, google.charts.Bar.convertOptions(options1));
+
+                var data2 = google.visualization.arrayToDataTable([
+                    ['Task', 'Hours per Day'],
+                    ['Work', 11],
+                    ['Eat', 2],
+                    ['Commute', 2]
+                ]);
+
+                var options2 = {
+                    chart: {
+                        title: 'Kg de Lixo Descartado por Região',
+                        subtitle: 'Quantidade de lixo descartado por tipo e região',
+                    },
+                    colors: ['#225044', '#88AF95', '#D1E8D4']
+                };
+
+                var chart2 = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+                chart2.draw(data2, options2);
+            }
+        </script>
+    </head>
+    <body>
+        <div class="square" id="one"></div>
+        <div class="square" id="two"></div>
+        <div class="square" id="three"></div>
+        <div class="square" id="four"></div>
+        <div class="square" id="five"></div>
+
+        <img src="PHOTO.png" alt="Profile Picture" class="profile">
+
+        <input type="text" placeholder="Pesquisar" class="search">
+
+        <p class="user">Maria Leticia Fernandes</p>
+        <p class="cargo">Analista de operações</p>
+
+        <div class="status"></div>
+
+        <div id="columnchart_material" style="width: 500px; height: 350px;"></div>
+
+        <div id="piechart_3d" style="width: 38%; height: 400px;"></div>
+
+        <div class="chat"></div>
+        <div class="notification"></div>
+    </body>
+</html>
